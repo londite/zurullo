@@ -18,17 +18,18 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //I don't know why is not grabbing the id of the button
+        //Android studio found the IDs without problem when they were in the activity
+        // but now in the fragment, it seems that it can't find them, both button and
+        // editText.
         Button buttonGo = (Button) findViewById(R.id.buttonGo);
-
     }
 
-        //Is not grabbing the editText ID either. I probably forgot something
-    public void goButton (View v) {
+    public void goButton (View view) {
         EditText laURL=(EditText) findViewById(R.id.editTextURL);
 
         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(laURL.getText().toString())));
     }
+
 
 
 }
